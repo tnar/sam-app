@@ -1,42 +1,24 @@
-# SAM Application API
+# sam-app
 
-This README provides instructions on how to call the API endpoints using curl.
+## Description
 
-## API Endpoints
+sam-app is a serverless application built using the AWS Serverless Application Model (AWS SAM). It includes Lambda functions for CRUD operations on a DynamoDB table, integrated with API Gateway for HTTP endpoints.
 
-### 1. Get All Items
+## Features
 
-To retrieve all items from the DynamoDB table:
+- **CRUD Operations**: Create, Read, Update, Delete items in a DynamoDB table via HTTP endpoints.
+- **AWS SAM CLI Integration**: Easily build, test, and deploy the application using AWS SAM CLI.
+- **Unit Testing**: Implemented using Jest.
+- **CI/CD Ready**: Includes `buildspec.yml` for AWS CodeBuild integration.
 
-curl -X GET {URL}
+## Prerequisites
 
+- **AWS CLI**: [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html).
+- **AWS SAM CLI**: [Install the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html).
+- **Node.js**: [Install Node.js 20](https://nodejs.org/en/), includes npm.
+- **Docker**: [Install Docker](https://www.docker.com/products/docker-desktop).
 
-### 2. Get Item by ID
+## Installation
 
-To retrieve a specific item by its ID:
+Clone the repository and install dependencies:
 
-
-curl -X GET {URL}/{id}
-
-
-Replace `{id}` with the actual ID of the item you want to retrieve.
-
-### 3. Create a New Item
-
-To add a new item to the DynamoDB table:
-
-curl -X POST {URL} \
--H "Content-Type: application/json" \
--d '{"id": "unique_id", "name": "Item Name"}'
-
-
-Replace `"unique_id"` and `"Item Name"` with the desired values.
-
-### 4. Delete an Item
-
-To delete an item from the DynamoDB table:
-
-curl -X DELETE {URL}/{id}
-
-
-Replace `{id}` with the ID of the item you want to delete.
